@@ -1,3 +1,3 @@
-import Accordion from "./Accordion";
+import FaqAccordion from "./Accordion";
 
-export default Accordion;
+export default FaqAccordion;

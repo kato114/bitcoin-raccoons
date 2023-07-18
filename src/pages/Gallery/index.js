@@ -1,5 +1,3 @@
-const Gallery = () => {
-  return <h1>Blog Articles</h1>;
-};
+import Gallery from "./Gallery";
 
 export default Gallery;
