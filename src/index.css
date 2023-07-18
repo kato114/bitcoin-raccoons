@@ -32,6 +32,10 @@ button {
   padding: 16px 27px;
 }
 
+button:hover {
+  background: linear-gradient(0deg, #3a3945, #3a3945);
+}
+
 section.hero {
   background-image: url(./assets/img/backgrounds/bg-hero-1.png),
     url(./assets/img/backgrounds/bg-hero-2.png);
@@ -92,6 +96,54 @@ section.footer {
   background-color: #1a1a1a;
 }
 
+@keyframes headerMargin {
+  from {
+    margin-top: -100px;
+    margin-bottom: 100px;
+  }
+  to {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+.header {
+  animation-name: headerMargin;
+  animation-duration: 1s;
+}
+
+@keyframes heroContentMargin {
+  from {
+    margin-top: 400px;
+    margin-bottom: -400px;
+    transform: scale(0.5);
+  }
+  to {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    transform: scale(1);
+  }
+}
+
+.hero-content {
+  animation-name: heroContentMargin;
+  animation-duration: 2s;
+}
+
+@keyframes heroMargin {
+  from {
+    transform: scale(2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero {
+  animation-name: heroMargin;
+  animation-duration: 2s;
+}
+
 .header.open {
   height: 100vh;
   position: fixed;
@@ -125,7 +177,7 @@ section.footer {
 
 .react-toggle--checked .react-toggle-thumb {
   left: 10px;
-  border-color: #3B3D5E;
+  border-color: #3b3d5e;
   background-color: #3b3d5e;
 }
 

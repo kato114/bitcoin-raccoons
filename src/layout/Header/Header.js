@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <nav
-      className={`header ${
+      className={`header z-50 ${
         navOpen ? "open" : "close"
       } w-full flex justify-center bg-[#1A1A1A] py-2 lg:py-4`}
       data-te-navbar-ref
@@ -86,18 +86,18 @@ const Header = () => {
             data-te-navbar-nav-ref
           >
             <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-              <Link className="text-[20px] font-semibold" to="/">
+              <Link className="text-[20px] hover:text-[#F7C953] font-semibold" to="/">
                 About
               </Link>
             </li>
             <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-              <Link className="text-[20px] font-semibold" to="/gallery">
+              <Link className="text-[20px] hover:text-[#F7C953] font-semibold" to="/gallery">
                 Gallery
               </Link>
             </li>
             <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
               <a
-                className="text-[20px] font-semibold"
+                className="text-[20px] hover:text-[#F7C953] font-semibold"
                 href="#"
                 data-te-nav-link-ref
               >
