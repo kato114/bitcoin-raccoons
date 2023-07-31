@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -11,9 +12,7 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import SearchBox from "../../components/SearchBox";
 import ToggleSwitch from "../../components/ToggleSwitch";
 
-import nft1 from "../../assets/img/nfts/1.jpg";
-
-const Gallery = () => {
+const Gallery = ({ setPage }) => {
   const items = [
     {
       uuid: 0,
@@ -69,8 +68,12 @@ const Gallery = () => {
     },
   ];
 
+  useEffect(() => {
+    setPage("gallery");
+  }, []);
+
   return (
-    <section className="gallery flex flex-col items-center gap-[100px] md:gap-[100px] md:gap-[150px] py-[90px]">
+    <section className="gallery flex flex-col items-center gap-[100px] md:gap-[100px] md:gap-[150px] py-[90px] mt-[112px]">
       <h1 className="mb-[-20px] font-luckiest text-[40px] sm:text-[50px] lg:text-[70px] xl:text-[110px] xxl:text-[125px] drop-shadow-[4px_7px_5px_rgba(255,255,255,0.25)]">
         GALLERY
       </h1>
@@ -82,7 +85,11 @@ const Gallery = () => {
           </span>
           <Accordion preExpanded={[0]}>
             {items.map((item) => (
-              <AccordionItem key={item.uuid} uuid={item.uuid} className="my-[30px]">
+              <AccordionItem
+                key={item.uuid}
+                uuid={item.uuid}
+                className="my-[30px]"
+              >
                 <AccordionItemHeading>
                   <AccordionItemButton className="px-[40px] py-[20px] text-[17px] bg-[#3B3D5E]">
                     {item.heading}

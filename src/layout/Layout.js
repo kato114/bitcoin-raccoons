@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const Layout = ({ children }) => {
+const Layout = ({ page, children }) => {
   return (
     <>
-      <Header />
+      <Header page={page} />
       {children}
-      <Footer />
+      <Footer page={page} />
     </>
   );
 };

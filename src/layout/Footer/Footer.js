@@ -5,7 +5,9 @@ import icon_paper from "../../assets/img/icons/paper.png";
 import icon_discord from "../../assets/img/icons/discord.png";
 import icon_twitter from "../../assets/img/icons/twitter.png";
 
-const Footer = () => {
+const Footer = (props) => {
+  const { page } = props;
+
   return (
     <section className="footer z-40">
       <nav
@@ -35,38 +37,40 @@ const Footer = () => {
           </div>
 
           <div className="hidden xl:flex gap-[100px]">
-            <ul
-              className="list-style-none mr-auto flex flex-col pl-0 lg:flex-row gap-[100px] brightness-50"
-              data-te-navbar-nav-ref
-            >
-              <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-                <a
-                  className="text-[20px] font-semibold"
-                  href="#"
-                  data-te-nav-link-ref
-                >
-                  About
-                </a>
-              </li>
-              <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-                <a
-                  href="#"
-                  className="text-[20px] font-semibold"
-                  data-te-nav-link-ref
-                >
-                  Gallery
-                </a>
-              </li>
-              <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-                <a
-                  className="text-[20px] font-semibold"
-                  href="#"
-                  data-te-nav-link-ref
-                >
-                  FAQ
-                </a>
-              </li>
-            </ul>
+            {page != "gallery" && (
+              <ul
+                className="list-style-none mr-auto flex flex-col pl-0 lg:flex-row gap-[100px] brightness-50"
+                data-te-navbar-nav-ref
+              >
+                <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                  <a
+                    className="text-[20px] font-semibold"
+                    href="#about"
+                    data-te-nav-link-ref
+                  >
+                    About
+                  </a>
+                </li>
+                <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                  <a
+                    href="#gallery"
+                    className="text-[20px] font-semibold"
+                    data-te-nav-link-ref
+                  >
+                    Gallery
+                  </a>
+                </li>
+                <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                  <a
+                    className="text-[20px] font-semibold"
+                    href="#faq"
+                    data-te-nav-link-ref
+                  >
+                    FAQ
+                  </a>
+                </li>
+              </ul>
+            )}
             <div className="relative flex items-center gap-[50px] mr-[20px]">
               <a className="" href="#">
                 <img

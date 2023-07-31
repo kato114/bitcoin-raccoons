@@ -6,7 +6,8 @@ import icon_discord from "../../assets/img/icons/discord.png";
 import icon_twitter from "../../assets/img/icons/twitter.png";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
+  const {page} = props;
   const [navOpen, setNavOpen] = useState(false);
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const Header = () => {
     <nav
       className={`header z-50 ${
         navOpen ? "open" : "close"
-      } w-full flex justify-center bg-[#1A1A1A] py-2 lg:py-4`}
+      } w-full fixed top-0 flex justify-center bg-[#1A1A1A] py-2 lg:py-4`}
       data-te-navbar-ref
     >
       <div className="w-full lg:flex items-center justify-between px-3 max-w-[1920px]">
@@ -81,32 +82,44 @@ const Header = () => {
             navOpen ? "block" : "hidden"
           } lg:flex items-center lg:gap-[50px] xl:gap-[100px] p-[50px] lg:p-0`}
         >
-          <ul
-            className="list-style-none mr-auto flex flex-col pl-0 lg:flex-row gap-[20px] lg:gap-[20px] xl:gap-[100px]"
-            data-te-navbar-nav-ref
-          >
-            <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-              <Link className="text-[20px] hover:text-[#F7C953] font-semibold" to="/">
-                About
-              </Link>
-            </li>
-            <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-              <Link className="text-[20px] hover:text-[#F7C953] font-semibold" to="/gallery">
-                Gallery
-              </Link>
-            </li>
-            <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-              <a
-                className="text-[20px] hover:text-[#F7C953] font-semibold"
-                href="#"
-                data-te-nav-link-ref
-              >
-                FAQ
-              </a>
-            </li>
-          </ul>
+          {page != "gallery" && (
+            <ul
+              className="list-style-none mr-auto flex flex-col pl-0 lg:flex-row gap-[20px] lg:gap-[20px] xl:gap-[100px]"
+              data-te-navbar-nav-ref
+            >
+              <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                <a
+                  className="text-[20px] hover:text-[#F7C953] font-semibold"
+                  href="#about"
+                >
+                  About
+                </a>
+              </li>
+              <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                <a
+                  className="text-[20px] hover:text-[#F7C953] font-semibold"
+                  href="#gallery"
+                >
+                  Gallery
+                </a>
+              </li>
+              <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                <a
+                  className="text-[20px] hover:text-[#F7C953] font-semibold"
+                  href="#faq"
+                  data-te-nav-link-ref
+                >
+                  FAQ
+                </a>
+              </li>
+            </ul>
+          )}
           <div className="relative flex justify-between items-center gap-[20px] lg:gap-[50px] mr-0 lg:mr-[20px] mt-[50px] lg:mt-0">
-            <a className="" href="#">
+            <a
+              className=""
+              href="https://bitcoin-raccoons.gitbook.io/bitcoin-raccoons/"
+              target="_blank"
+            >
               <img
                 src={icon_paper}
                 style={{ height: "28px" }}
@@ -122,7 +135,11 @@ const Header = () => {
                 loading="lazy"
               />
             </a>
-            <a className="" href="#">
+            <a
+              className=""
+              href="https://twitter.com/BTCRaccoons"
+              target="_blank"
+            >
               <img
                 src={icon_twitter}
                 style={{ height: "28px" }}
