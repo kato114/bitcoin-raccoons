@@ -33,10 +33,10 @@ const Home = ({ setPage }) => {
             want a brand fitting of Bitcoin's cryptic nature, that a community
             can rally behind - Raccoons
           </p>
-          <Button
+          {/* <Button
             text="WHITELIST"
             clickEvent={() => setModalStatus(!modalStatus)}
-          />
+          /> */}
         </div>
       </section>
       <section
